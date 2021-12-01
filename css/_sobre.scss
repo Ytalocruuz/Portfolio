@@ -1,0 +1,25 @@
+#introducao {
+    background-color: #415a80;
+    color: #fff;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    align-items: center;
+    margin-top: 200px;
+  }
+  
+  #introducao .estilizacao-intro h3{
+    font-size: 35px;
+    
+  }
+  
+  #introducao .estilizacao-intro p{
+    color: #fefbfb;
+    opacity: 0.5;
+    padding: 25px;
+    font-size: 1.4rem;
+  }

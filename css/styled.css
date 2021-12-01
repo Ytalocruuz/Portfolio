@@ -213,6 +213,7 @@ a:hover {
   display: block;
   padding: 0.5rem;
   color: white;
+  margin: 20px;
 }
 
 @media screen and (max-width: 600px) {
@@ -280,5 +281,118 @@ a:hover {
             transform: rotate(-135deg);
     top: -7px;
   }
+}
+
+div#animacao-bolinha {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div#animacao-bolinha .container {
+  width: 1000px;
+  background: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(#415a80), to(#415a80));
+  background: linear-gradient(0, #415a80, #415a80);
+  overflow: hidden;
+  height: 5vh;
+}
+
+.stars {
+  position: relative;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  -webkit-box-shadow: 50px 30px white, 100px 80px white, 80px 120px white, 300px 20px white, 250px 130px white, 200px 50px white, 150px 100px white, 320px 100px white;
+          box-shadow: 50px 30px white, 100px 80px white, 80px 120px white, 300px 20px white, 250px 130px white, 200px 50px white, 150px 100px white, 320px 100px white;
+  -webkit-animation: anim-stars 10s linear infinite;
+          animation: anim-stars 10s linear infinite;
+}
+
+.stars::after {
+  content: " ";
+  position: absolute;
+  top: 2px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  -webkit-box-shadow: 50px 30px white, 100px 80px white, 80px 120px white, 300px 20px white, 250px 130px white, 200px 50px white, 150px 100px white, 320px 100px white;
+          box-shadow: 50px 30px white, 100px 80px white, 80px 120px white, 300px 20px white, 250px 130px white, 200px 50px white, 150px 100px white, 320px 100px white;
+}
+
+.stars2 {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  -webkit-box-shadow: 15px 15px white, 125px 35px white, 50px 80px white, 10px 120px white, 275px 90px white, 230px 10px white, 120px 130px white, 300px 130px white, 220px 115px white;
+          box-shadow: 15px 15px white, 125px 35px white, 50px 80px white, 10px 120px white, 275px 90px white, 230px 10px white, 120px 130px white, 300px 130px white, 220px 115px white;
+  -webkit-animation: anim-stars 20s linear infinite;
+          animation: anim-stars 20s linear infinite;
+}
+
+.stars2::after {
+  content: " ";
+  position: absolute;
+  top: 2px;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  -webkit-box-shadow: 15px 15px white, 125px 35px white, 50px 80px white, 10px 120px white, 275px 90px white, 230px 10px white, 120px 130px white, 300px 130px white, 220px 115px white;
+          box-shadow: 15px 15px white, 125px 35px white, 50px 80px white, 10px 120px white, 275px 90px white, 230px 10px white, 120px 130px white, 300px 130px white, 220px 115px white;
+}
+
+@-webkit-keyframes anim-stars {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+  }
+}
+
+@keyframes anim-stars {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-150px);
+            transform: translateY(-150px);
+  }
+}
+
+#introducao {
+  background-color: #415a80;
+  color: #fff;
+  padding-top: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 200px;
+}
+
+#introducao .estilizacao-intro h3 {
+  font-size: 35px;
+}
+
+#introducao .estilizacao-intro p {
+  color: #fefbfb;
+  opacity: 0.5;
+  padding: 25px;
+  font-size: 1.4rem;
 }
 /*# sourceMappingURL=styled.css.map */
