@@ -1,0 +1,46 @@
+#introducao {
+    background-color: #415a80;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    align-items: center;
+    margin-top: 150px;
+  }
+  
+  #introducao .estilizacao-intro h3{
+    font-size: 30px;
+    background: -webkit-linear-gradient(#637BAD, #ADB9D3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #introducao .estilizacao-intro h1{
+    font-size: 40px;
+    background: -webkit-linear-gradient(#637BAD, #ADB9D3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  #introducao .estilizacao-intro p{
+    color: #fefbfb;
+    opacity: 0.5;
+    padding: 25px;
+    font-size: 2.0rem;
+  }
+
+  #introducao .ruivo{
+    width: 30rem;
+    height: 30rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    
+    #introducao{
+      display: flex;
+      flex-direction: column;
+    }
+  }
