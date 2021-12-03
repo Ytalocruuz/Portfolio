@@ -1,0 +1,72 @@
+.larguraMax {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.main-animacao {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+    
+}
+
+.inform {
+    width: 700px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.main-animacao .inform h2 {
+    font-size: 38px;
+    background: -webkit-linear-gradient(#637bad, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.main-animacao .inform p {
+    font-size: 28px;
+    text-align: center;
+    background: -webkit-linear-gradient(#9daed3, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.main-animacao .inform span {
+    color: #415a80;
+}
+
+.button-sobre {
+    align-items: center;
+    justify-content: center;
+}
+
+.main-animacao .ruivo {
+    width: 30rem;
+    height: 30rem;
+}
+
+@media screen and (max-width: 600px) {
+    .main-animacao {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-animacao {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+
+    }
+
+    .main-animacao .inform{
+        width: 340px;
+        height: 590px;
+        padding: 20px;
+    
+    }
+}
