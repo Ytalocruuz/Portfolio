@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+#formacao {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#formacao .titulo-formacao {
+  font-size: 38px;
+  margin-bottom: 40px;
+  background: -webkit-linear-gradient(#637bad, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container {
+  max-width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // grid-gap: 35px;
+  // margin: 0 auto;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  padding: 10px 0;
+
+  .card {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin: 0 auto;
+    background: #415a80;
+    border-radius: 15px;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+
+    .face {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.face1 {
+        box-sizing: border-box;
+        padding: 20px;
+
+        h2 {
+          margin: 0;
+          padding: 0;
+        }
+
+        .java {
+          background-color: #fffc00;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .python {
+          background-color: #00fffc;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .cSharp {
+          background-color: #fc00ff;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      &.face2 {
+        transition: 0.5s;
+
+        h2 {
+          margin: 0;
+          padding: 0;
+          font-size: 6em;
+          color: #fff;
+          transition: 0.5s;
+          text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          z-index: 10;
+          background: -webkit-linear-gradient(#376ad8, #fff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+  }
+
+  .card:hover .face.face2 {
+    height: 60px;
+
+    h2 {
+      font-size: 2em;
+    }
+  }
+
+  .card:nth-child(1) .face.face2 {
+    background-image: linear-gradient(40deg, #415a80 0%, #7896bb 45%, #40609b 100%);
+    border-radius: 15px;
+  }
+
+  .card:nth-child(2) .face.face2 {
+    background-image: linear-gradient(40deg, #7896bb 0%, #40609b 45%, #415a80 100%);
+    border-radius: 15px;
+  }
+
+  .card:nth-child(3) .face.face2 {
+    background-image: linear-gradient(40deg, #40609b 0%, #7896bb 45%, #415a80 100%);
+    border-radius: 15px;
+  }
+}
