@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+section .larguraMaxforma {
+    padding: 50px 50px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav .informNav {
+    font-size: 38px;
+    background: -webkit-linear-gradient(#637bad, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.box-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    padding: 50px;
+    margin: 6%;
+    background: #415a80;
+    width: 400px;
+    // border: 1px solid #addee4;
+    box-shadow: 0 2px 3px 0px rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    transition: 0.2s all;
+}
+
+nav .box-wrap:hover .box {
+    filter: blur(3px);
+    opacity: 0.5;
+    transform: scale(0.98);
+    box-shadow: none;
+}
+
+nav .box-wrap:hover .box:hover {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+    box-shadow: 0 8px 20px 0px #415a80;
+}
+
+nav .box-wrap p {
+    font-size: 25px;
+    text-align: center;
+    background: -webkit-linear-gradient(#637bad, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+@media screen and (max-width: 600px){
+    padding: 50px 29px;
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .box-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .box{
+        width: 300px;
+        padding: 50px;
+        margin-bottom: 20px;
+    }
+    nav .box-wrap p {
+        font-size: 27px;
+    }
+}
