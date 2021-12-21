@@ -1,0 +1,174 @@
+#conhecimentos {
+  padding: 100px 75px;
+  background-color: #fff;
+  @media screen and (max-width: 1024px) {
+    padding: 75px 20px 100px 20px;
+  }
+  .larguraMaxContainer {
+    > div {
+      display: flex;
+      justify-content: space-between;
+      height: auto;
+      flex-wrap: wrap;
+      div,
+      article {
+        width: 50%;
+        @media screen and (max-width: 1124px) {
+          width: 100%;
+        }
+        h2 {
+          span {
+            color: rgb(155, 58, 58);
+            font-size: 6rem;
+          }
+        }
+      }
+      #cards-conhecimentos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        @media screen and (max-width: 1124px) {
+          margin-top: 50px;
+        }
+        article:hover .cards-nomes,
+        article:hover .cards-nomes-baixo {
+          display: block;
+          text-align: center;
+        }
+        article:hover {
+          border: 2px solid rgb(34, 8, 8);
+        }
+        article:before,
+        article:after {
+          content: "";
+          position: absolute;
+          border: 2px solid transparent;
+          height: 0;
+          width: 0;
+          top: 0px;
+          right: 0px;
+        }
+
+        article:hover {
+          animation: buttonColorChange 1s ease-out forwards;
+        }
+
+        article:hover:before {
+          animation: buttonBeforeColorChange 1s ease-out forwards;
+        }
+
+        article:hover:after {
+          animation: buttonAfterColorChange 1s ease-out forwards;
+        }
+
+        @keyframes buttonColorChange {
+          100% {
+            color: #fff;
+          }
+        }
+
+        @keyframes buttonBeforeColorChange {
+          50% {
+            width: 100%;
+            height: 0%;
+            border-top-color: #fff;
+          }
+          100% {
+            width: 100%;
+            height: 100%;
+            border-top-color: #fff;
+            border-left-color: #fff;
+          }
+        }
+
+        @keyframes buttonAfterColorChange {
+          50% {
+            width: 0%;
+            height: 100%;
+            border-right-color: #fff;
+          }
+          100% {
+            width: 100%;
+            height: 100%;
+            border-right-color: #fff;
+            border-bottom-color: #fff;
+          }
+        }
+        article {
+          width: 20%;
+          flex-grow: 1;
+          height: 130px;
+          background-color: rgb(184, 84, 84);
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+
+          @media screen and (max-width: 768px) {
+            width: 40%;
+            margin: 20px 0px;
+          }
+          .cards-nomes {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            background-color: rgb(184, 84, 84);
+            padding: 5px;
+            height: 30px;
+            width: 125px;
+            border-radius: 4px;
+            color: rgb(14, 9, 9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            font-size: 1.8rem;
+          }
+          .cards-nomes-baixo {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            background-color: rgb(184, 84, 84);
+            padding: 5px;
+            height: auto;
+            width: 125px;
+            border-radius: 4px;
+            color: rgb(14, 9, 9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            font-size: 1.8rem;
+          }
+          .aumento-hover {
+            bottom: -75px;
+          }
+          .icon-conhecimentos {
+            width: 60px;
+          }
+        }
+      }
+      #texto-conhecimentos {
+        height: 300px;
+        h2 {
+          margin-bottom: 30px;
+          color: rgb(14, 9, 9);
+          font-size: 3.2rem;
+          font-weight: 500;
+        }
+        p {
+          max-width: 500px;
+          line-height: 32px;
+          color: rgb(14, 9, 9);
+          font: {
+            family: Circular Std Book;
+            size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+}

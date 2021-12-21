@@ -963,4 +963,268 @@ nav .box-wrap p {
     font-size: 27px;
   }
 }
+
+#conhecimentos {
+  padding: 100px 75px;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  #conhecimentos {
+    padding: 75px 20px 100px 20px;
+  }
+}
+
+#conhecimentos .larguraMaxContainer > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#conhecimentos .larguraMaxContainer > div div,
+#conhecimentos .larguraMaxContainer > div article {
+  width: 50%;
+}
+
+@media screen and (max-width: 1124px) {
+  #conhecimentos .larguraMaxContainer > div div,
+  #conhecimentos .larguraMaxContainer > div article {
+    width: 100%;
+  }
+}
+
+#conhecimentos .larguraMaxContainer > div div h2 span,
+#conhecimentos .larguraMaxContainer > div article h2 span {
+  color: #9b3a3a;
+  font-size: 6rem;
+}
+
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media screen and (max-width: 1124px) {
+  #conhecimentos .larguraMaxContainer > div #cards-conhecimentos {
+    margin-top: 50px;
+  }
+}
+
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article:hover .cards-nomes,
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article:hover .cards-nomes-baixo {
+  display: block;
+  text-align: center;
+}
+
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article:hover {
+  border: 2px solid #220808;
+}
+
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article:before,
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article:after {
+  content: "";
+  position: absolute;
+  border: 2px solid transparent;
+  height: 0;
+  width: 0;
+  top: 0px;
+  right: 0px;
+}
+
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article:hover {
+  -webkit-animation: buttonColorChange 1s ease-out forwards;
+          animation: buttonColorChange 1s ease-out forwards;
+}
+
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article:hover:before {
+  -webkit-animation: buttonBeforeColorChange 1s ease-out forwards;
+          animation: buttonBeforeColorChange 1s ease-out forwards;
+}
+
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article:hover:after {
+  -webkit-animation: buttonAfterColorChange 1s ease-out forwards;
+          animation: buttonAfterColorChange 1s ease-out forwards;
+}
+
+@-webkit-keyframes buttonColorChange {
+  100% {
+    color: #fff;
+  }
+}
+
+@keyframes buttonColorChange {
+  100% {
+    color: #fff;
+  }
+}
+
+@-webkit-keyframes buttonBeforeColorChange {
+  50% {
+    width: 100%;
+    height: 0%;
+    border-top-color: #fff;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: #fff;
+    border-left-color: #fff;
+  }
+}
+
+@keyframes buttonBeforeColorChange {
+  50% {
+    width: 100%;
+    height: 0%;
+    border-top-color: #fff;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: #fff;
+    border-left-color: #fff;
+  }
+}
+
+@-webkit-keyframes buttonAfterColorChange {
+  50% {
+    width: 0%;
+    height: 100%;
+    border-right-color: #fff;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+  }
+}
+
+@keyframes buttonAfterColorChange {
+  50% {
+    width: 0%;
+    height: 100%;
+    border-right-color: #fff;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+  }
+}
+
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article {
+  width: 20%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 130px;
+  background-color: #b85454;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  #conhecimentos .larguraMaxContainer > div #cards-conhecimentos article {
+    width: 40%;
+    margin: 20px 0px;
+  }
+}
+
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article .cards-nomes {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  background-color: #b85454;
+  padding: 5px;
+  height: 30px;
+  width: 125px;
+  border-radius: 4px;
+  color: #0e0909;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  font-size: 1.8rem;
+}
+
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article .cards-nomes-baixo {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  background-color: #b85454;
+  padding: 5px;
+  height: auto;
+  width: 125px;
+  border-radius: 4px;
+  color: #0e0909;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  font-size: 1.8rem;
+}
+
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article .aumento-hover {
+  bottom: -75px;
+}
+
+#conhecimentos .larguraMaxContainer > div #cards-conhecimentos article .icon-conhecimentos {
+  width: 60px;
+}
+
+#conhecimentos .larguraMaxContainer > div #texto-conhecimentos {
+  height: 300px;
+}
+
+#conhecimentos .larguraMaxContainer > div #texto-conhecimentos h2 {
+  margin-bottom: 30px;
+  color: #0e0909;
+  font-size: 3.2rem;
+  font-weight: 500;
+}
+
+#conhecimentos .larguraMaxContainer > div #texto-conhecimentos p {
+  max-width: 500px;
+  line-height: 32px;
+  color: #0e0909;
+  font-family: Circular Std Book;
+  font-size: 1.8rem;
+}
 /*# sourceMappingURL=styled.css.map */
