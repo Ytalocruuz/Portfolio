@@ -57,6 +57,14 @@ nav .box-wrap p {
     -webkit-text-fill-color: transparent;
 }
 
+nav .repositorio {
+    text-decoration: none;
+    font-size: 25px;
+    background: -webkit-linear-gradient(#637bad, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 @media screen and (max-width: 600px){
     padding: 50px 29px;
