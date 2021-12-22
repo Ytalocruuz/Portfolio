@@ -964,9 +964,14 @@ nav .box-wrap p {
   }
 }
 
+.larguraMaxContainer {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
 #conhecimentos {
   padding: 100px 75px;
-  background-color: #fff;
+  background-color: #415a80;
 }
 
 @media screen and (max-width: 1024px) {
@@ -1001,7 +1006,7 @@ nav .box-wrap p {
 
 #conhecimentos .larguraMaxContainer > div div h2 span,
 #conhecimentos .larguraMaxContainer > div article h2 span {
-  color: #9b3a3a;
+  color: #415a80;
   font-size: 6rem;
 }
 
@@ -1027,7 +1032,7 @@ nav .box-wrap p {
 }
 
 #conhecimentos .larguraMaxContainer > div #cards-conhecimentos article:hover {
-  border: 2px solid #220808;
+  border: 2px solid #fff;
 }
 
 #conhecimentos .larguraMaxContainer > div #cards-conhecimentos article:before,
@@ -1130,7 +1135,7 @@ nav .box-wrap p {
       -ms-flex-positive: 1;
           flex-grow: 1;
   height: 130px;
-  background-color: #b85454;
+  background-color: #fff;
   border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1157,12 +1162,12 @@ nav .box-wrap p {
   left: 50%;
   -webkit-transform: translate(-50%, 0%);
           transform: translate(-50%, 0%);
-  background-color: #b85454;
+  background-color: #fff;
   padding: 5px;
   height: 30px;
   width: 125px;
   border-radius: 4px;
-  color: #0e0909;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1182,12 +1187,12 @@ nav .box-wrap p {
   left: 50%;
   -webkit-transform: translate(-50%, 0%);
           transform: translate(-50%, 0%);
-  background-color: #b85454;
+  background-color: #fff;
   padding: 5px;
   height: auto;
   width: 125px;
   border-radius: 4px;
-  color: #0e0909;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1215,7 +1220,7 @@ nav .box-wrap p {
 
 #conhecimentos .larguraMaxContainer > div #texto-conhecimentos h2 {
   margin-bottom: 30px;
-  color: #0e0909;
+  color: #fff;
   font-size: 3.2rem;
   font-weight: 500;
 }
@@ -1223,8 +1228,8 @@ nav .box-wrap p {
 #conhecimentos .larguraMaxContainer > div #texto-conhecimentos p {
   max-width: 500px;
   line-height: 32px;
-  color: #0e0909;
-  font-family: Circular Std Book;
+  color: #fff;
+  font-family: #fff;
   font-size: 1.8rem;
 }
 /*# sourceMappingURL=styled.css.map */
