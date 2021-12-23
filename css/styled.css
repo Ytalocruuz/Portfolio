@@ -1017,6 +1017,7 @@ nav .repositorio {
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
   grid: repeat(1fr 1fr 1fr 1fr);
+  justify-items: center;
   margin: 0px 70px 0px 70px;
 }
 
@@ -1028,6 +1029,20 @@ nav .repositorio {
 .container-conhecimentos .card .face {
   width: 230px;
   height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -1060,6 +1075,16 @@ nav .repositorio {
   opacity: 0.4;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .container-conhecimentos .card:hover .face.face1 .content {
@@ -1068,6 +1093,8 @@ nav .repositorio {
 
 .container-conhecimentos .card .face.face1 .content img {
   max-width: 100px;
+  width: 60px;
+  height: 60px;
 }
 
 .container-conhecimentos .card .face.face1 .content h3 {
@@ -1075,7 +1102,7 @@ nav .repositorio {
   padding: 0;
   color: #fff;
   text-align: center;
-  font-size: 2.9em;
+  font-size: 2.7em;
 }
 
 .container-conhecimentos .card .face.face2 {
