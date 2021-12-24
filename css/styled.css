@@ -238,7 +238,7 @@ a:hover {
   -webkit-text-fill-color: transparent;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 730px) {
   #header {
     position: fixed;
   }
@@ -437,7 +437,7 @@ a:hover {
   height: 30rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   #introducao {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -520,7 +520,7 @@ a:hover {
   height: 30rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .main-animacao {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -836,7 +836,7 @@ footer div a:hover {
     max-width: 100vw;
     margin-left: 50px;
     margin-right: 50px;
-    margin-bottom: 70px;
+    margin-bottom: 80 px;
     padding: 10px 0;
   }
   .card {
@@ -1014,10 +1014,12 @@ nav .repositorio {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid: repeat(1fr 1fr 1fr 1fr);
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   margin: 0px 70px 0px 70px;
 }
 
@@ -1027,8 +1029,8 @@ nav .repositorio {
 }
 
 .container-conhecimentos .card .face {
-  width: 230px;
-  height: 200px;
+  width: 245px;
+  height: 220px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1085,6 +1087,8 @@ nav .repositorio {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .container-conhecimentos .card:hover .face.face1 .content {
@@ -1103,6 +1107,9 @@ nav .repositorio {
   color: #fff;
   text-align: center;
   font-size: 2.7em;
+  background: -webkit-linear-gradient(#637bad, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .container-conhecimentos .card .face.face2 {
@@ -1139,18 +1146,36 @@ nav .repositorio {
   color: #fff;
 }
 
-.container-conhecimentos.card .face.face2 .content a {
-  margin: 15px 0 0;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 900;
-  color: #333;
-  padding: 5px;
-  border: 1px solid #333;
-}
-
 .container-conhecimentos .card .face.face2 .content a:hover {
   background: #333;
   color: #fff;
+}
+
+@media screen and (max-width: 750px) {
+  .container-conhecimentos {
+    max-width: 100vw;
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid: repeat(1fr 1fr 1fr 1fr);
+    justify-items: center;
+    margin: 0px 70px 0px 70px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container-conhecimentos {
+    max-width: 100vw;
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid: repeat(1fr 1fr 1fr 1fr);
+    justify-items: center;
+    margin: 0px 70px 0px 70px;
+  }
 }
 /*# sourceMappingURL=styled.css.map */

@@ -9,8 +9,6 @@
     align-items: center;
     margin-top: 100px;
     margin-bottom: 100px;
-    
-    
 }
 
 .inform {
@@ -52,7 +50,7 @@
     height: 30rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     .main-animacao {
         display: flex;
         flex-direction: column;
