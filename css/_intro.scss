@@ -1,44 +1,100 @@
+
+:root{
+    --bg-color: #415a80;
+}
+
 #introducao {
-    background-color: #415a80;
-    color: #fff;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-left: 50px;
-    padding-right: 50px;
-    text-align: center;
-    align-items: center;
-    margin-top: 100px;
-  }
-  
-  #introducao .estilizacao-intro h3{
-    font-size: 40px;
-    background: -webkit-linear-gradient(#637BAD, #fff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  display: flex;
+  align-items: center;
+  align-items: center;
+  justify-content:space-around;
+  overflow: hidden;
+  margin-top: 100px;
+  padding-bottom: 30px;
+  color: #fff;
+  background-color: var(--bg-color);
+}
 
-  #introducao .estilizacao-intro h1{
+.H3 {
+   font-size: 40px;
+}
+
+.H1 {
     font-size: 50px;
-    background: -webkit-linear-gradient(#637BAD, #fff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  #introducao .estilizacao-intro p{
-    color: #fefbfb;
-    opacity: 0.5;
-    padding: 25px;
-    font-size: 2.5rem;
-    font-weight: 500;
-  }
+}
 
-  #introducao .ruivo{
+.P {
+    font-size: 2.5rem;
+    opacity: 0.6;
+    font-weight: 500;
+}
+
+.ruivo {
     width: 30rem;
     height: 30rem;
-  }
+}
 
-  @media screen and (max-width: 650px) {
+.home-title{
+    align-items: center;
+    text-align: center;
+    
+}
+
+.home-title span{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    line-height: 1.2;
+    background: -webkit-linear-gradient(#637BAD, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-title span::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    animation: a-ltr-after 1s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(-101%);
+}
+
+.home-title span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    animation: a-ltr-before 1s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(0);
+}
+
+.home-title span:nth-of-type(1)::before,
+.home-title span:nth-of-type(1)::after{
+    animation-delay: 0s;
+}
+
+.home-title span:nth-of-type(2)::before,
+.home-title span:nth-of-type(2)::after{
+    animation-delay: 0.2s;
+}
+
+@keyframes a-ltr-after{
+    0% {transform: translateX(-100%)}
+    100% {transform: translateX(101%)}
+}
+
+@keyframes a-ltr-before{
+    0% {transform: translateX(0)}
+    100% {transform: translateX(200%)}
+}
+
+@media screen and (max-width: 650px) {
     
     #introducao{
       display: flex;

@@ -1,122 +1,127 @@
+
 footer {
-    padding: 50px 10px;
-    text-align: center;
-    background-color: #415a80;
-    color: #fefbfb;
-    font-family: "Maiden Orange", cursive;
-  }
-  
-  footer > a {
-    background-color: #415a80;
-    padding: 10px 20px;
-    border-radius: 6px;
-    color: #fefbfb;
-    font-size: 25px;
-  }
+  padding: 50px 10px;
+  text-align: center;
+  background-color: #415a80;
+  color: #fefbfb;
+  font-family: "Maiden Orange", cursive;
+}
 
-  .footer-a {
-    position: relative;
-    padding: 20px;
-    width: 350px;
-    box-shadow: 0 0 5px 0px #e2e2e2;
-    cursor: pointer;
-  }
+footer > a {
+  background-color: #415a80;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: #fefbfb;
+  font-size: 25px;
+}
 
-  .footer-a:after,
-  .footer-a:before {
-    bottom: 0;
-    content: "";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: transform 0.3s ease-in-out;
-  }
+.footer-a {
+  position: relative;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0 0 5px 0px #e2e2e2;
+  cursor: pointer;
+}
 
-  .footer-a:before {
-    border-left: 2px solid #5283ec;
-    border-right: 2px solid #5283ec;
-    transform: scaleY(0);
-    border-radius: 20px;
-  }
+.footer-a:after,
+.footer-a:before {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+}
 
-  .footer-a:after {
-    border-bottom: 2px solid #5283ec;
-    border-top: 2px solid #5283ec;
-    transform: scaleX(0);
-    border-radius: 20px;
-  }
+.footer-a:before {
+  border-left: 2px solid #5283ec;
+  border-right: 2px solid #5283ec;
+  transform: scaleY(0);
+  border-radius: 20px;
+}
 
-  .footer-a:hover:before {
-    transform: scaleY(1);
-  }
+.footer-a:after {
+  border-bottom: 2px solid #5283ec;
+  border-top: 2px solid #5283ec;
+  transform: scaleX(0);
+  border-radius: 20px;
+}
 
-  .footer-a:hover:after {
-    transform: scaleX(1);
-  }
-  
-  footer > a:hover {
-    opacity: 1;
-  }
-  
-  footer h2 {
-    color: #fefbfb;
-    font-weight: 500;
-    font-size: 38px;
-    background: -webkit-linear-gradient(#637BAD, #fff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  footer p {
-    color: #fefbfb;
-    opacity: 0.9;
-    padding: 25px;
-    font-size: 2.6rem;
-    background: -webkit-linear-gradient(#376ad8, #fff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  footer p:nth-child(2) {
-    margin-bottom: 25px;
-  }
-  
-  footer p:nth-child(5) {
-    opacity: 1;
-  }
-  
-  footer div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin: 30px;
-  }
-  footer .footer-a {
-    border-radius: 20px;
-    background-color: #52698b;
-    color: #fff;
-    opacity: 0.5;
-  }
-  
-  footer div a {
-    background-color: #52698b;
-    padding: 15px 25px;
-    margin: 10px;
-    border-radius: 5px;
-    color: #fefbfb;
-    opacity: 0.5;
-    font-size: 1.9rem;
-  }
-  
-  footer div a:hover {
-    opacity: 1;
-  }
+.footer-a:hover:before {
+  transform: scaleY(1);
+}
+
+.footer-a:hover:after {
+  transform: scaleX(1);
+}
+
+ul {
+  display: flex;
+}
+
+footer > a:hover {
+  opacity: 1;
+}
+
+footer h2 {
+  color: #fefbfb;
+  font-weight: 500;
+  font-size: 38px;
+  background: -webkit-linear-gradient(#637bad, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer p {
+  color: #fefbfb;
+  opacity: 0.9;
+  padding: 25px;
+  font-size: 2.6rem;
+  background: -webkit-linear-gradient(#376ad8, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer p:nth-child(2) {
+  margin-bottom: 25px;
+}
+
+footer p:nth-child(5) {
+  opacity: 1;
+}
+
+footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 30px;
+}
+footer .footer-a {
+  border-radius: 20px;
+  background-color: #52698b;
+  color: #fff;
+  opacity: 0.5;
+}
+
+footer div a {
+  background-color: #52698b;
+  padding: 15px 25px;
+  margin: 10px;
+  border-radius: 5px;
+  color: #fefbfb;
+  opacity: 0.5;
+  font-size: 1.9rem;
+}
+
+footer div a:hover {
+  opacity: 1;
+}
