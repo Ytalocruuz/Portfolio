@@ -22,6 +22,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Maiden+Orange&display=swap" rel="stylesheet">
+
+
+  <!-- link emoticon devicon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
   <!-- Titulo -->
   <title>Yt Cruz - Desenvolvedor Front-End</title>
 </head>
@@ -185,7 +189,7 @@
     </div>
 
     <!-- Conhecimentos -->
-    <section id="conhecimentos">
+    <!-- <section id="conhecimentos">
       <div class="titulo-conhecimentos">
         <h3>Conhecimentos</h3>
       </div>
@@ -319,6 +323,68 @@
       </div>
 
 
+    </section> -->
+
+    <!-- Conhecimentos -->
+    <section id="conhecimento">
+      <main id="app">
+  
+        <section class="backgrounds">
+          <div 
+               class="background" 
+               style="--primary: var(--pink); --secondary: var(--orange)">
+          </div>
+          <div 
+               class="background" 
+               data-active="true" style="--primary: var(--purple); --secondary: var(--pink)">
+          </div>
+          <div 
+               class="background" 
+               style="--primary: var(--green); --secondary: var(--cyan)">
+          </div>
+          <div 
+               class="background" 
+               style="--primary: var(--blue); --secondary: var(--purple)">
+          </div>
+          <div 
+               class="background" 
+               style="--primary: var(--blue); --secondary: var(--purple)">
+          </div>
+        </section>
+        
+        <section class="content">
+          <article>
+            <header>
+              <h1>Get the middle seat if you don't check in on time</h1>
+            </header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </article>
+          <article data-active="true" >
+            <header>
+              <h1>Your boarding zone is "recruiter"</h1>
+            </header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, reiciendis.</p>
+          </article>
+          <article data-id="3" >
+            <header>
+              <h1>Check in for your flight online</h1>
+            </header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet dignissimos corporis dolor.</p>
+          </article>
+          <article data-id="4">
+            <header>
+              <h1>Get through security eventually</h1>
+            </header>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint eaque adipisci sit?</p>
+          </article>
+          <article data-id="4">
+            <header>
+              <h1>Get through security eventually</h1>
+            </header>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint eaque adipisci sit?</p>
+          </article>
+        </section>
+      </main>
     </section>
 
     <!-- Aminação Bolinha -->
@@ -343,7 +409,7 @@
     </div>
 
     <!-- Formação  -->
-    <section id="formacao">
+    <!-- <section id="formacao">
 
       <h2 class="titulo-formacao">Habilidades</h2>
 
@@ -381,7 +447,7 @@
           </div>
         </div>
 
-        <!-- <div class="card"> 
+        <div class="card"> 
           <div class="face face1">
             <div class="content">
               <span class="stars"></span>
@@ -393,11 +459,11 @@
           <div class="face face2">
             <h2>03</h2>
           </div>
-        </div>  -->
+        </div> 
 
       </div>
 
-    </section>
+    </section> -->
     <!-- Aminação Bolinha -->
     <div id="animacao-bolinha">
       <div class="container">
@@ -471,23 +537,38 @@
 
   <!-- Rodapé - Contatos -->
   <footer class="footer-teste">
-      <h2>Contato</h2>
-    
-      <p>Hello, Se você deseja bater um papo, envie uma mensagem.  Disponivel sempre!</p>
+    <h2>Contato</h2>
+
+    <p>Hello, Se você deseja bater um papo, envie uma mensagem. Disponivel sempre!</p>
+    <br>
+    <div class="social-container">
       <br>
-      <div class="social-container">
-        <br>
-        <ul class="social-icons">
-            <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
-            <li><a href="#"><i class="fa fa-github"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-      </div>
-      <br>
-      <p class="text-rodape">Especilamente e orgulhosamente feito por mim Ytalo Cruz</p>
+      <ul class="social-icons">
+        <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+        <li><a href="#"><i class="fa fa-github"></i></a></li>
+        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+    <br>
+    <p class="text-rodape">Especilamente e orgulhosamente feito por mim Ytalo Cruz</p>
   </footer>
 
-  
+
+  <!-- Botao Lateral   -->
+  <div class="butao-lateral">
+    <a class="bg_links social portfolio" href="#contato" target="_blank">
+      <span class="icon"></span>
+    </a>
+    <a class="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
+      <i class="devicon-codeigniter-plain"></i>
+    </a>
+    <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
+      <i class="devicon-codeigniter-plain"></i>
+    </a>
+    <i class="devicon-codeigniter-plain"></i>
+  </div>
+
+
   <!-- Aminação Bolinha -->
 
   <div id="animacao-bolinha">
@@ -518,20 +599,9 @@
   <!-- Icones de Conhecimentos Font Awesome -->
   <script src="https://kit.fontawesome.com/b6059988f3.js" crossorigin="anonymous"></script>
 
+  <!-- Lógica do conhecimento -->
+  <script src="./js/logica.conhecimento.js"></script>
+
 </body>
 
 </html>
-
-
-
-<!-- <ul >
-  <li><a href="https://www.linkedin.com/in/ytalo-cruz/" class="fa fa-github" style="text-decoration:none"
-      target="_blank" rel="noopener">
-    </a></li>
-  <li><a href="https://github.com/Ytalocruuz" class="fa fa-linkedin" style="text-decoration:none" target="_blank"
-      rel="noopener">
-    </a></li>
-  <li><a href="https://api.whatsapp.com/send?1=pt_BR&phone=5592984745944" class="fa fa-whatsapp"
-      style="text-decoration:none" target="_blank" rel="noopener">
-    </a></li>
-</ul> -->

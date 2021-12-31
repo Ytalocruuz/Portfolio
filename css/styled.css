@@ -1102,60 +1102,115 @@ nav .repositorio {
   }
 }
 
-#conhecimentos {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-top: 20px;
+:root {
+  --green: #37c4b1;
+  --cyan: #25aad8;
+  --blue: #4092e3;
+  --purple: #7d54c1;
+  --pink: #c776a3;
+  --orange: #ee8877;
+  --deep-purple: #415a80;
+  --duration: 0.7s;
+  --ease: cubic-bezier(0.6, 0, 0.2, 1);
+  --transition: transform var(--duration) var(--ease);
 }
 
-#conhecimentos .titulo-conhecimentos {
+#conhecimento {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: var(--deep-purple);
+  overflow: hidden;
 }
 
-#conhecimentos .titulo-conhecimentos h3 {
-  background: -webkit-linear-gradient(#637bad, #fff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 38px;
-  font-weight: 500;
+.goo-filter {
+  position: absolute;
+  visibility: hidden;
 }
 
-.container-conhecimentos {
-  max-width: 100vw;
-  position: relative;
+#app {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: center;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  margin: 0px 70px 0px 70px;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  height: 90vmin;
+  width: 55vmin;
 }
 
-.container-conhecimentos .card {
-  position: relative;
-  cursor: pointer;
+#app > section {
+  margin: 5vmin 8vmin;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1 / 1;
 }
 
-.container-conhecimentos .card .face {
-  width: 200px;
-  height: 220px;
+section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 800px;
+          perspective: 800px;
+  will-change: transform;
+}
+
+section > * {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1 / 1;
+}
+
+.backgrounds {
+  -webkit-filter: url("#goo");
+          filter: url("#goo");
+  pointer-events: none;
+}
+
+.background {
+  will-change: transform;
+  border-radius: 2vmin;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--primary, blue)), to(var(--secondary, pink)));
+  background-image: linear-gradient(to bottom, var(--primary, blue), var(--secondary, pink));
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 3;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4b3777), to(#331847));
+  background-image: linear-gradient(to bottom, #4b3777, #331847);
+  opacity: 0.8;
+  -webkit-transition: inherit;
+  transition: inherit;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+
+.background[data-active]::before {
+  opacity: 0.01;
+}
+
+article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1163,83 +1218,97 @@ nav .repositorio {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
 }
 
-.container-conhecimentos .card .face.face1 {
-  position: relative;
-  background: #415a80;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.background,
+article {
+  will-change: transform;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  -webkit-transition-property: z-index, -webkit-transform, -webkit-transform-origin;
+  transition-property: z-index, -webkit-transform, -webkit-transform-origin;
+  transition-property: transform, transform-origin, z-index;
+  transition-property: transform, transform-origin, z-index, -webkit-transform, -webkit-transform-origin;
+  padding: 5vmin;
+  color: white;
+  -webkit-transform-origin: right center;
+          transform-origin: right center;
+  -webkit-transform: translateX(-90%) translateZ(-25vmin) rotateY(40deg);
+          transform: translateX(-90%) translateZ(-25vmin) rotateY(40deg);
+}
+
+.background[data-active],
+article[data-active] {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: translateX(0) translateZ(0) rotateY(0deg);
+          transform: translateX(0) translateZ(0) rotateY(0deg);
+  z-index: 3;
+}
+
+.background[data-active] ~ *,
+article[data-active] ~ * {
+  z-index: -1;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transform: translateX(140%) translateZ(-25vmin) rotateY(-40deg);
+          transform: translateX(140%) translateZ(-25vmin) rotateY(-40deg);
+}
+
+.background[data-active] + *,
+article[data-active] + * {
   z-index: 1;
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
-  border-radius: 20px;
+  -webkit-transform: translateX(90%) translateZ(-25vmin) rotateY(-40deg);
+          transform: translateX(90%) translateZ(-25vmin) rotateY(-40deg);
 }
 
-.container-conhecimentos .card:hover .face.face1 {
-  background: #415a80;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+article {
+  opacity: 0;
+  -webkit-transition-property: opacity, z-index, -webkit-transform, -webkit-transform-origin;
+  transition-property: opacity, z-index, -webkit-transform, -webkit-transform-origin;
+  transition-property: transform, transform-origin, opacity, z-index;
+  transition-property: transform, transform-origin, opacity, z-index, -webkit-transform, -webkit-transform-origin;
 }
 
-.container-conhecimentos .card .face.face1 .content {
-  opacity: 0.4;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.container-conhecimentos .card:hover .face.face1 .content {
+article[data-active] {
   opacity: 1;
 }
 
-.container-conhecimentos .card .face.face1 .content img {
-  max-width: 100px;
-  width: 60px;
-  height: 60px;
+h1 {
+  font-size: 4vmin;
+  line-height: 1.2;
 }
 
-.container-conhecimentos .card .face.face1 .content h3 {
-  margin: 10px 0 0;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-  font-size: 2.7em;
-  background: -webkit-linear-gradient(#637bad, #fff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+p {
+  font-size: 2.5vmin;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.container-conhecimentos .card .face.face2 {
-  position: relative;
-  background: #415a80;
+.butao-lateral {
+  position: fixed;
+  z-index: 10;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.butao-lateral .bg_links {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1249,58 +1318,136 @@ nav .repositorio {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-box-shadow: 0 20px 50px #5f789e;
-          box-shadow: 0 20px 50px #5f789e;
-  -webkit-transform: translateY(-100px);
-          transform: translateY(-100px);
-  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  position: absolute;
 }
 
-.container-conhecimentos .card:hover .face.face2 {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+.butao-lateral .logo {
+  width: 40px;
+  height: 40px;
+  z-index: 9;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 10px 7px;
+  opacity: 0.9;
+  -webkit-transition: all 1s 0.2s ease;
+  transition: all 1s 0.2s ease;
+  bottom: 0;
+  right: 0;
 }
 
-.container-conhecimentos .card .face.face2 .content p {
-  margin: 0;
-  padding: 0;
-  font-size: 1.9rem;
-  color: #fff;
+.butao-lateral .social {
+  opacity: 0;
+  right: 0;
+  bottom: 0;
 }
 
-.container-conhecimentos .card .face.face2 .content a:hover {
-  background: #333;
-  color: #fff;
+.butao-lateral .social .icon {
+  width: 100%;
+  height: 100%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.2s ease, background-color 0.4s ease;
+  transition: all 0.2s ease, background-color 0.4s ease;
+  opacity: 0;
+  border-radius: 100%;
 }
 
-@media screen and (max-width: 750px) {
-  .container-conhecimentos {
-    max-width: 100vw;
-    position: relative;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    grid: repeat(1fr 1fr 1fr 1fr);
-    justify-items: center;
-    margin: 0px 70px 0px 70px;
-  }
+.butao-lateral .social.portfolio {
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
-@media screen and (max-width: 400px) {
-  .container-conhecimentos {
-    max-width: 100vw;
-    position: relative;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    grid: repeat(1fr 1fr 1fr 1fr);
-    justify-items: center;
-    margin: 0px 70px 0px 70px;
-  }
+.butao-lateral .social.portfolio .icon {
+  background-image: url(https://rafaelalucas91.github.io/assets/codepen/link.svg);
+}
+
+.butao-lateral .social.dribbble {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.butao-lateral .social.dribbble .icon {
+  background-image: url(https://rafaelalucas91.github.io/assets/codepen/dribbble.svg);
+}
+
+.butao-lateral .social.linkedin {
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.butao-lateral .social.linkedin .icon {
+  background-image: url(https://rafaelalucas91.github.io/assets/codepen/linkedin.svg);
+}
+
+.butao-lateral:hover {
+  width: 105px;
+  height: 105px;
+  -webkit-transition: all 0.6s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+  transition: all 0.6s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.butao-lateral:hover .logo {
+  opacity: 1;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.butao-lateral:hover .social {
+  opacity: 1;
+}
+
+.butao-lateral:hover .social .icon {
+  opacity: 0.9;
+}
+
+.butao-lateral:hover .social:hover {
+  background-size: 28px;
+}
+
+.butao-lateral:hover .social:hover .icon {
+  background-size: 65%;
+  opacity: 1;
+}
+
+.butao-lateral:hover .social.portfolio {
+  right: 0;
+  bottom: calc(100% - 40px);
+  -webkit-transition: all 0.3s 0s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+  transition: all 0.3s 0s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.butao-lateral:hover .social.portfolio .icon:hover {
+  background-color: #698fb7;
+}
+
+.butao-lateral:hover .social.dribbble {
+  bottom: 45%;
+  right: 45%;
+  -webkit-transition: all 0.3s 0.15s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+  transition: all 0.3s 0.15s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.butao-lateral:hover .social.dribbble .icon:hover {
+  background-color: #ea4c89;
+}
+
+.butao-lateral:hover .social.linkedin {
+  bottom: 0;
+  right: calc(100% - 40px);
+  -webkit-transition: all 0.3s 0.25s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+  transition: all 0.3s 0.25s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+
+.butao-lateral:hover .social.linkedin .icon:hover {
+  background-color: #0077b5;
 }
 /*# sourceMappingURL=styled.css.map */
