@@ -115,6 +115,7 @@
 ::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: relative;
 }
 
 ul,
@@ -156,11 +157,19 @@ button:focus {
 body {
   font-family: "Maiden Orange", cursive;
   background-color: #415a80;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 ::-webkit-scrollbar {
@@ -1103,16 +1112,24 @@ nav .repositorio {
 }
 
 :root {
-  --green: #37c4b1;
-  --cyan: #25aad8;
-  --blue: #4092e3;
-  --purple: #7d54c1;
-  --pink: #c776a3;
-  --orange: #ee8877;
+  --green: #415a80;
+  --cyan: #415a80;
+  --blue: #415a80;
+  --purple: #415a80;
+  --pink: #415a80;
+  --orange: #415a80;
   --deep-purple: #415a80;
   --duration: 0.7s;
   --ease: cubic-bezier(0.6, 0, 0.2, 1);
   --transition: transform var(--duration) var(--ease);
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
 }
 
 #conhecimento {
@@ -1141,12 +1158,12 @@ nav .repositorio {
       grid-template-columns: 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-  height: 90vmin;
+  height: 50vmin;
   width: 55vmin;
 }
 
 #app > section {
-  margin: 5vmin 8vmin;
+  margin: 6vmin 8vmin;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: 1 / 1;
@@ -1197,8 +1214,8 @@ section > * {
   left: 0;
   margin: auto;
   z-index: 3;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#4b3777), to(#331847));
-  background-image: linear-gradient(to bottom, #4b3777, #331847);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#415a80), to(#8391a7));
+  background-image: linear-gradient(to bottom, #415a80, #8391a7);
   opacity: 0.8;
   -webkit-transition: inherit;
   transition: inherit;
@@ -1218,6 +1235,8 @@ article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .background,
@@ -1281,8 +1300,95 @@ h1 {
 
 p {
   font-size: 2.5vmin;
-  line-height: 1.4;
+  line-height: 1.2;
   color: rgba(255, 255, 255, 0.6);
+}
+
+section .content article span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section .content article .titulo-conhecimento {
+  font-size: 38px;
+  font-weight: 500;
+  background: -webkit-linear-gradient(#415a80, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section .content article span h1,
+img {
+  margin-left: 30px;
+  font-size: 29px;
+  font-weight: 500;
+  background: -webkit-linear-gradient(#415a80, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content img {
+  width: 20px;
+}
+
+section .content article h1 {
+  font-size: 35px;
+  font-weight: 500;
+  background: -webkit-linear-gradient(#415a80, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section .content article p {
+  font-size: 26px;
+  width: 50%;
+  text-align: center;
+}
+
+section .content article .continer-conhecimento {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section .content article .continer-conhecimento .container-conhecimento-a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  margin-top: 10px;
+}
+
+section .content article .continer-conhecimento a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  background: -webkit-linear-gradient(#415a80, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid #8391a7;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+section .content article .continer-conhecimento a:hover {
+  color: #fff;
+  background-color: red;
+}
+
+section .content article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .butao-lateral {

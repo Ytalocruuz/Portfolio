@@ -9,6 +9,7 @@
 ::before,
 ::after {
     box-sizing: border-box;
+    position: relative;
 }
 ul,
 ol {
@@ -33,7 +34,7 @@ h5,
 h6 {
     margin: 0;
 }
-button{
+button {
     border: 0;
     font-family: "Maiden Orange", cursive;
     &:focus {
@@ -43,10 +44,18 @@ button{
 body {
     font-family: "Maiden Orange", cursive;
     background-color: #415a80;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 html {
     scroll-behavior: smooth;
     font-size: 62.5%;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 ::-webkit-scrollbar {
     width: 12px;
@@ -58,4 +67,3 @@ html {
     background-color: #fff;
     border-radius: 8px;
 }
-
