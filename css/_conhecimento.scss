@@ -12,12 +12,7 @@
     --transition: transform var(--duration) var(--ease);
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-    position: relative;
-}
+
 
 #conhecimento {
     display: flex;
@@ -148,21 +143,22 @@ p {
     color: rgba(white, 0.6);
 }
 
-section .content article span {
-    display: flex;
-}
-
 section .content article .titulo-conhecimento {
     font-size: 38px;
     font-weight: 500;
+    display: flex;
     background: -webkit-linear-gradient(#415a80, #fff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+section .content article .continer-conhecimento .header-conhecimento{
+    display: flex;
+}
+
 section .content article span h1,
 img {
-    margin-left: 30px;
+    margin-left: 60px;
     font-size: 29px;
     font-weight: 500;
     background: -webkit-linear-gradient(#415a80, #fff);
@@ -190,16 +186,19 @@ section .content article p {
 
 section .content article .continer-conhecimento {
     display: flex;
-    
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 70px;
+    margin-left: 70px;
 }
-section .content article .continer-conhecimento  .container-conhecimento-a{
 
+
+section .content article .continer-conhecimento .container-conhecimento-a {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50%;
     margin-top: 10px;
-    
 }
 
 section .content article .continer-conhecimento a {
@@ -212,15 +211,37 @@ section .content article .continer-conhecimento a {
     border: 2px solid #8391a7;
     border-radius: 12px;
     padding: 6px;
-    
 }
 
-section .content article .continer-conhecimento a:hover{
+section .content article .continer-conhecimento a:hover {
     color: #fff;
     background-color: red;
 }
 
-section .content article{
+section .content article {
     display: flex;
     justify-content: space-around;
+}
+
+section .content article .continer-conhecimento .icone-maior-conhecimento{
+    width: 200px;
+    height: 200px;
+}
+
+
+@media screen and (max-width:600px){
+    section .content article {
+        display: flex;
+    }
+
+    h1 {
+        font-size: 3vmin;
+        line-height: 1.2;
+    }
+    
+    p {
+        font-size: 2.0vmin;
+        line-height: 1.2;
+        color: rgba(white, 0.6);
+    }
 }

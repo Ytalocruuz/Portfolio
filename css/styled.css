@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* ini: Preloader */
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 #preloader {
@@ -650,7 +649,7 @@ a:hover {
   }
 }
 
-.footer-teste {
+.footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -664,7 +663,7 @@ a:hover {
   background-color: #415a80;
 }
 
-.footer-teste h2 {
+.footer h2 {
   color: #fff;
   margin-bottom: 20px;
   font-size: 38px;
@@ -674,92 +673,115 @@ a:hover {
   -webkit-text-fill-color: transparent;
 }
 
-span {
-  margin-bottom: 20px;
-  margin-top: 20px;
+.social-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -10px;
 }
 
-span a {
-  text-decoration: none;
-  font-size: 25px;
-  color: #fff;
-  border: 1px solid #637bad;
-  border-radius: 20px;
-  padding: 10px 10px;
-  cursor: pointer;
-  -webkit-box-shadow: 0 0 5px 0px #e2e2e2;
-          box-shadow: 0 0 5px 0px #e2e2e2;
+.social-buttons__button {
+  margin: 10px 5px 0;
 }
 
-.social-container {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.social-icons {
-  padding: 0;
-  list-style: none;
-  margin: 0;
+.social-button {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.social-icons li {
-  display: inline-block;
-  margin: 1em;
-  position: relative;
-  font-size: 3em;
-}
-
-.social-icons i {
-  color: #fff;
-  position: absolute;
-  top: 15px;
-  left: 17px;
-  -webkit-transition: all 265ms ease-out;
-  transition: all 265ms ease-out;
-  background: -webkit-linear-gradient(#376ad8, #fff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.social-icons a {
-  display: inline-block;
-}
-
-.social-icons a:before {
-  transform: scale(1);
-  -ms-transform: scale(1);
-  -webkit-transform: scale(1);
-  content: " ";
-  width: 60px;
-  height: 60px;
+  outline: none;
+  width: 70px;
+  height: 70px;
+  text-decoration: none;
   border-radius: 100%;
+  background: #415a80;
+  text-align: center;
+}
+
+.social-button::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
   display: block;
-  background: linear-gradient(45deg, #415a80, #738cb1);
-  -webkit-transition: all 265ms ease-out;
-  transition: all 265ms ease-out;
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.social-icons a:hover:before {
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition: all 265ms ease-in;
-  transition: all 265ms ease-in;
+.social-button:focus, .social-button:hover {
+  color: #fff;
 }
 
-.social-icons a:hover i {
-  transform: scale(1.9);
-  -ms-transform: scale(1.9);
-  -webkit-transform: scale(1.9);
-  color: #415a80;
-  background: -webkit-linear-gradient(#376ad8, #fff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.social-button:focus::after, .social-button:hover::after {
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  margin-left: calc(-50% - 1px);
 }
 
-.footer-teste p {
+.social-button i,
+.social-button svg {
+  position: relative;
+  z-index: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.social-button i {
+  font-size: 28px;
+}
+
+.social-button svg {
+  height: 40%;
+  width: 40%;
+}
+
+.social-button--mail {
+  color: #902222;
+}
+
+.social-button--mail::after {
+  background: #902222;
+}
+
+.social-button--whatsapp {
+  color: #3b9962;
+}
+
+.social-button--whatsapp::after {
+  background: #3b9962;
+}
+
+.social-button--linkedin {
+  color: #0077b5;
+}
+
+.social-button--linkedin::after {
+  background: #0077b5;
+}
+
+.social-button--github {
+  color: #6e5494;
+}
+
+.social-button--github::after {
+  background: #6e5494;
+}
+
+.footer p {
   font-size: 2.6rem;
   background: -webkit-linear-gradient(#376ad8, #fff);
   -webkit-background-clip: text;
@@ -771,7 +793,7 @@ span a {
 }
 
 @media screen and (max-width: 700px) {
-  .footer-teste {
+  .footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -784,16 +806,13 @@ span a {
             flex-direction: column;
     text-align: center;
   }
-  .footer-teste p {
+  .footer p {
     color: #fff;
     background: -webkit-linear-gradient(#fff, #fff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding-left: 10px;
     padding-right: 10px;
-  }
-  li {
-    margin: 0.7rem;
   }
 }
 
@@ -1124,14 +1143,6 @@ nav .repositorio {
   --transition: transform var(--duration) var(--ease);
 }
 
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  position: relative;
-}
-
 #conhecimento {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1304,23 +1315,26 @@ p {
   color: rgba(255, 255, 255, 0.6);
 }
 
-section .content article span {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 section .content article .titulo-conhecimento {
   font-size: 38px;
   font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background: -webkit-linear-gradient(#415a80, #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+section .content article .continer-conhecimento .header-conhecimento {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 section .content article span h1,
 img {
-  margin-left: 30px;
+  margin-left: 60px;
   font-size: 29px;
   font-weight: 500;
   background: -webkit-linear-gradient(#415a80, #fff);
@@ -1350,6 +1364,13 @@ section .content article .continer-conhecimento {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 70px;
+  margin-left: 70px;
 }
 
 section .content article .continer-conhecimento .container-conhecimento-a {
@@ -1389,6 +1410,28 @@ section .content article {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+section .content article .continer-conhecimento .icone-maior-conhecimento {
+  width: 200px;
+  height: 200px;
+}
+
+@media screen and (max-width: 600px) {
+  section .content article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  h1 {
+    font-size: 3vmin;
+    line-height: 1.2;
+  }
+  p {
+    font-size: 2.0vmin;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.6);
+  }
 }
 
 .butao-lateral {

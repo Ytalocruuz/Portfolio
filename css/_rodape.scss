@@ -1,18 +1,17 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+$social-button-size: 70px;
+$social-button-icon-size: 0.4;
+$social-button-background: #415a80;
+$social-button-active-color: #fff;
+$social-button-transition-time: 0.3s;
 
-$timing: 265ms;
-$iconColor: #415a80;
-$accent: #738cb1;
-$bluefade: #0043e0;
-$gradient: #4572bb;
+$social-button-colors: (
+    "mail": rgb(144, 34, 34),
+    "whatsapp": #3b9962,
+    "linkedin": #0077b5,
+    "github": #6e5494,
+);
 
-@mixin transformScale($size: 1) {
-    transform: scale($size);
-    -ms-transform: scale($size);
-    -webkit-transform: scale($size);
-}
-
-.footer-teste {
+.footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,87 +26,85 @@ $gradient: #4572bb;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-
-    // .text-rodape{
-
-    // }
 }
 
-span {
-    margin-bottom: 20px;
-    margin-top: 20px;
 
-    a {
-        text-decoration: none;
-        font-size: 25px;
-        color: #fff;
-        border: 1px solid #637bad;
-        border-radius: 20px;
-        padding: 10px 10px;
-        cursor: pointer;
-        box-shadow: 0 0 5px 0px #e2e2e2;
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -10px;
+
+    &__button {
+        margin: 10px 5px 0;
     }
 }
 
-.social-container {
-    text-align: center;
-    margin-bottom: 20px;
-}
 
-.social-icons {
-    padding: 0;
-    list-style: none;
-    margin: 0;
+.social-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    outline: none;
+    width: $social-button-size;
+    height: $social-button-size;
+    text-decoration: none;
+    border-radius: 100%;
+    background: $social-button-background;
+    text-align: center;
 
-    li {
-        display: inline-block;
-        margin: 1em;
+    &::after {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        display: block;
+        width: 0;
+        height: 0;
+        border-radius: 100%;
+        transition: $social-button-transition-time;
+    }
+
+    &:focus,
+    &:hover {
+        color: $social-button-active-color;
+
+        &::after {
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
+            margin-left: calc(-50% - 1px);
+        }
+    }
+
+    i,
+    svg {
         position: relative;
-        font-size: 3em;
+        z-index: 1;
+        transition: $social-button-transition-time;
     }
 
     i {
-        color: #fff;
-        position: absolute;
-        top: 15px;
-        left: 17px;
-        transition: all $timing ease-out;
-        background: -webkit-linear-gradient(#376ad8, #fff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        font-size: $social-button-size * $social-button-icon-size;
     }
 
-    a {
-        display: inline-block;
+    svg {
+        height: percentage($social-button-icon-size);
+        width: percentage($social-button-icon-size);
+    }
 
-        &:before {
-            @include transformScale();
-            content: " ";
-            width: 60px;
-            height: 60px;
-            border-radius: 100%;
-            display: block;
-            background: linear-gradient(45deg, $iconColor, $accent);
-            transition: all $timing ease-out;
-        }
+    @each $name, $color in $social-button-colors {
+        &--#{$name} {
+            color: $color;
 
-        &:hover:before {
-            transform: scale(0);
-            transition: all $timing ease-in;
-        }
-
-        &:hover i {
-            @include transformScale(1.9);
-            color: $iconColor;
-            background: -webkit-linear-gradient(#376ad8, #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            &::after {
+                background: $color;
+            }
         }
     }
 }
 
-.footer-teste p {
+.footer p {
     font-size: 2.6rem;
     background: -webkit-linear-gradient(#376ad8, #fff);
     -webkit-background-clip: text;
@@ -119,13 +116,13 @@ span {
 }
 
 @media screen and (max-width: 700px) {
-    .footer-teste {
+    .footer {
         display: flex;
         align-items: center;
         flex-direction: column;
         text-align: center;
     }
-    .footer-teste p {
+    .footer p {
         // font-size: 16px;
         color: #fff;
         background: -webkit-linear-gradient(#fff, #fff);
@@ -133,9 +130,5 @@ span {
         -webkit-text-fill-color: transparent;
         padding-left: 10px;
         padding-right: 10px;
-    }
-
-    li {
-        margin: 0.7rem;
     }
 }
