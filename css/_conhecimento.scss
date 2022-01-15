@@ -1,153 +1,79 @@
-$color: skyblue;
-$lineColor: rgb(228, 218, 218);
-$fontColor: #fff;
-$bgColor1: #4c658a;
-$bgColor2: #415a80;
-$yearBgColor: #415a80;
+#conhecimento-tec{
+    align-items: center;
+	display: flex;
+	height: 50vh;
+	justify-content: center;
 
-$gradient1: #637bad;
-
-$breakpoint: 700px;
-
-#conhecimento {
-    background-image: linear-gradient(to bottom, $bgColor2, $bgColor1, $bgColor2);
-    color: $fontColor;
-    padding: 1rem;
-    font-family: "Maiden Orange", cursive;
-}
-
-h1 {
-    text-align: center;
-    font-size: 3.5rem;
-    font-weight: 500;
-    background: -webkit-linear-gradient($gradient1, $fontColor);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-}
-
-
-
-.timeline {
-    position: relative;
-    padding: 1rem;
-    margin: 0 auto;
-    max-width: 1300px;
-    
-
-    &:before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        border: 1px solid $lineColor;
-        right: 40px;
-        top: 0;
-    }
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    @media screen and (min-width: $breakpoint) {
-        padding: 2rem;
-        &:before {
-            left: calc(50% - 1px);
-            right: auto;
-        }
+    img{
+        width: 60px;
     }
 }
 
-.timeline__item {
-    padding: 1rem;
-    border: 2px solid $lineColor;
-    border-image: linear-gradient(to right, $color 0%, $lineColor 100%);
-    border-image-slice: 1;
-    position: relative;
-    margin: 1rem 3rem 1rem 1rem;
-    clear: both;
+$color-1:#415a80;
 
-    &:after,
-    &:before {
-        content: "";
-        position: absolute;
-    }
-
-    &:before {
-        right: -10px;
-        top: calc(50% - 5px);
-        border-style: solid;
-        border-color: $lineColor $lineColor transparent transparent;
-        border-width: 10px;
-        transform: rotate(45deg);
-    }
-
-    @media screen and (min-width: $breakpoint) {
-        width: 44%;
-        margin: 1rem;
-
-        &:nth-of-type(2n) {
-            float: right;
-            margin: 1rem;
-            border-image: linear-gradient(to right, $lineColor 0%, $color 100%);
-            border-image-slice: 1;
-
-            &:before {
-                right: auto;
-                left: -10px;
-                border-color: transparent transparent $lineColor $lineColor;
-            }
-        }
-    }
+@mixin white-gradient {
+	background: linear-gradient(to right,  $color-1 0%,rgba(255,255,255,0) 100%);
 }
 
-.timeline__item--year {
-    text-align: center;
-    max-width: 150px;
-    font-weight: 500;
-    margin: 0 48px 0 auto;
-    font-size: 1.8rem;
-    background-color: $yearBgColor;
-    line-height: 1;
-    border-image: none;
-    padding: 0.5rem 1rem 1rem;
+$animationSpeed: 10s;
 
-    &:before {
-        display: none;
-    }
-
-    @media screen and (min-width: $breakpoint) {
-        text-align: center;
-        margin: 0 auto;
-
-        &:nth-of-type(2n) {
-            float: none;
-            margin: 0 auto;
-            border-image: none;
-
-            &:before {
-                display: none;
-            }
-        }
-    }
+// Animation
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 7))}
 }
 
 
+// Styling
+.slider {
+	background: $color-1;
+	height: 100px;
+	margin: auto;
+	overflow:hidden;
+	position: relative;
+	width: 960px;
+	
+	&::before,
+	&::after {
+		@include white-gradient;
+		content: "";
+		height: 100px;
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
 
-.timeline__title {
-    margin: 0;
-    font-size: 2.4em;
-    font-weight: 500;
-    background: -webkit-linear-gradient($gradient1, $fontColor);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    color: #fff;
+	&::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll $animationSpeed linear infinite;
+		display: flex;
+		width: calc(250px * 14);
+	}
+	
+	.slide {
+		height: 100px;
+		width: 250px;
+	}
 }
 
-.timeline__blurb {
-    line-height: 1.5;
-    font-size: 1rem;
-    margin: 0.5rem 0 0;
+@media screen and (min-width: 600px) {
+    #conhecimento-tec{
+        height: 20vh;
+    }
 }
 
- 
+@media screen and (max-width: 600px){
+    #conhecimento-tec{
+        height: 20vh;
+    }
+}
