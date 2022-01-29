@@ -86,6 +86,7 @@ h1 {
         width: 44%;
         margin: 1rem;
 
+       
         &:nth-of-type(2n) {
             float: right;
             margin: 1rem;
@@ -138,10 +139,10 @@ h1 {
     margin: 0;
     font-size: 2.4em;
     font-weight: 500;
-    background: -webkit-linear-gradient($gradient1, $fontColor);
+    background: -webkit-linear-gradient($fontColor, $fontColor);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
-    color: #fff;
+    color: $fontColor;
 }
 
 .timeline__blurb {
@@ -149,5 +150,7 @@ h1 {
     font-size: 1rem;
     margin: 0.5rem 0 0;
 }
+
+
 
  

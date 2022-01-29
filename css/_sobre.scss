@@ -1,12 +1,11 @@
 .larguraMax {
     max-width: 1140px;
     margin: 0 auto;
-    
 }
 $bgColor1: #415a80;
 $bgColor2: #50668a;
 
-#sobre{
+#sobre {
     background-image: linear-gradient(to bottom, $bgColor1, $bgColor2, $bgColor1);
 }
 
@@ -16,7 +15,6 @@ $bgColor2: #50668a;
     align-items: center;
     margin-top: 100px;
     margin-bottom: 100px;
-    
 }
 
 .inform {
@@ -26,7 +24,6 @@ $bgColor2: #50668a;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
 .main-animacao .inform h2 {
@@ -58,23 +55,41 @@ $bgColor2: #50668a;
     height: 30rem;
 }
 
-@media screen and (max-width: 850px) {
-    .main-animacao {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .main-animacao {
-        display: flex;
-        flex-direction: column;
-        margin-top: 20px;
-
-    }
-
-    .main-animacao .inform{
+@media screen and (max-width: 550px) {
+    .main-animacao .inform {
         width: 340px;
         height: 590px;
-        padding: 20px;
-    
+    }
+
+    .main-animacao .inform p {
+        background: -webkit-linear-gradient(#fff, #fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .main-animacao .ruivo {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    .ruivo {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .main-animacao .inform {
+        width: 300px;
+        height: 400px;
+    }
+    .main-animacao {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-animacao .inform {
+        width: 90%;
+        height: 70%;
     }
 }

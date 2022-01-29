@@ -572,6 +572,21 @@ a:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 80px;
+  }
+  .ruivo {
+    width: 25rem;
+    height: 25rem;
+  }
+  .H3 {
+    font-size: 30px;
+  }
+  .H1 {
+    font-size: 40px;
+  }
+  .P {
+    font-size: 2.0rem;
+    font-weight: 500;
   }
 }
 
@@ -651,30 +666,42 @@ a:hover {
   height: 30rem;
 }
 
-@media screen and (max-width: 850px) {
-  .main-animacao {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .main-animacao {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-top: 20px;
-  }
+@media screen and (max-width: 550px) {
   .main-animacao .inform {
     width: 340px;
     height: 590px;
-    padding: 20px;
+  }
+  .main-animacao .inform p {
+    background: -webkit-linear-gradient(#fff, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .main-animacao .ruivo {
+    width: 25rem;
+    height: 25rem;
+  }
+  .ruivo {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main-animacao .inform {
+    width: 300px;
+    height: 400px;
+  }
+  .main-animacao {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main-animacao .inform {
+    width: 90%;
+    height: 70%;
   }
 }
 
@@ -1338,7 +1365,7 @@ h1 {
   margin: 0;
   font-size: 2.4em;
   font-weight: 500;
-  background: -webkit-linear-gradient(#637bad, #fff);
+  background: -webkit-linear-gradient(#fff, #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #fff;
@@ -1421,8 +1448,8 @@ h1 {
 }
 
 .slider .slide-track {
-  -webkit-animation: scroll 10s linear infinite;
-          animation: scroll 10s linear infinite;
+  -webkit-animation: scroll 20s linear infinite;
+          animation: scroll 20s linear infinite;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
