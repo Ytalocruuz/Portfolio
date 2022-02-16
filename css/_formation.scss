@@ -8,12 +8,24 @@ $yearBgColor: #415a80;
 $gradient1: #637bad;
 
 $breakpoint: 700px;
+$breakpoint2: 1000px;
 
 #conhecimento {
     background-image: linear-gradient(to bottom, $bgColor2, $bgColor1, $bgColor2);
     color: $fontColor;
-    padding: 1rem;
+    margin-top: 70px;
     font-family: "Maiden Orange", cursive;
+    padding-top: 20px;
+
+}
+
+@media screen and ( min-width: $breakpoint2) {
+
+    #conheccimento{
+        margin-top: 100px;
+        padding-top: 30px;
+    }
+    
 }
 
 h1 {

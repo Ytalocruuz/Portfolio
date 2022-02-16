@@ -951,24 +951,6 @@ nav .box-wrap p {
   -webkit-text-fill-color: transparent;
 }
 
-.container-repositorio-orga {
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 .conatiner-button-projeto {
   position: relative;
   padding: 1em 1.5em;
@@ -1054,7 +1036,6 @@ nav .repositorio {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-top: 20px;
   }
   .box {
     width: 300px;
@@ -1236,8 +1217,16 @@ nav .repositorio {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#415a80), color-stop(#4c658a), to(#415a80));
   background-image: linear-gradient(to bottom, #415a80, #4c658a, #415a80);
   color: #fff;
-  padding: 1rem;
+  margin-top: 70px;
   font-family: "Maiden Orange", cursive;
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 1000px) {
+  #conheccimento {
+    margin-top: 100px;
+    padding-top: 30px;
+  }
 }
 
 h1 {
