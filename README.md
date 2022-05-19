@@ -4,4 +4,4 @@ Demostrar minha habilidades técnicas em um portfólio pessoal e profissional, d
 
 ## link do site
 
-https://naughty-albattani-1ade24.netlify.app/
+https://clever-bose-3889e4.netlify.app/
