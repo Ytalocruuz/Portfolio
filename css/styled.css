@@ -184,7 +184,11 @@ html {
 }
 
 #header {
-  background-color: #415a80;
+  background: linear-gradient(-46deg, #415a80, #11294d, #415a80, #11294d);
+  background-size: 400% 400%;
+  position: relative;
+  -webkit-animation: backgroundAnimation 8s ease-out infinite;
+          animation: backgroundAnimation 8s ease-out infinite;
   width: 100%;
   position: fixed;
   z-index: 999999;
@@ -192,6 +196,30 @@ html {
   padding-bottom: 0;
   top: 0;
   left: 0;
+}
+
+@-webkit-keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 80%;
+  }
+  50% {
+    background-position: 80% 100%;
+  }
+  100% {
+    background-position: 0% 98%;
+  }
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 80%;
+  }
+  50% {
+    background-position: 80% 100%;
+  }
+  100% {
+    background-position: 0% 98%;
+  }
 }
 
 #nav {
@@ -239,7 +267,6 @@ a:hover {
 #menu a {
   display: block;
   padding: 0.5rem;
-  color: white;
   margin: 20px;
   background: -webkit-linear-gradient(#637bad, #ffff);
   -webkit-background-clip: text;
@@ -349,8 +376,6 @@ a:hover {
 
 #animacao-bolinha .container {
   width: 1000px;
-  background: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(#415a80), to(#415a80));
-  background: linear-gradient(0, #415a80, #415a80);
   overflow: hidden;
   height: 5vh;
   margin: 2px;
@@ -385,8 +410,8 @@ a:hover {
   border-radius: 50%;
   -webkit-box-shadow: 15px 15px white, 125px 35px white, 50px 80px white, 10px 120px white, 275px 90px white, 230px 10px white, 120px 130px white, 300px 130px white, 220px 115px white;
           box-shadow: 15px 15px white, 125px 35px white, 50px 80px white, 10px 120px white, 275px 90px white, 230px 10px white, 120px 130px white, 300px 130px white, 220px 115px white;
-  -webkit-animation: anim-stars 6s linear infinite;
-          animation: anim-stars 6s linear infinite;
+  -webkit-animation: anim-stars 4s linear infinite;
+          animation: anim-stars 4s linear infinite;
 }
 
 .stars2::after {
@@ -1045,172 +1070,50 @@ nav .repositorio {
   nav .box-wrap p {
     font-size: 27px;
   }
-}
-
-.butao-lateral {
-  position: fixed;
-  z-index: 10;
-  bottom: 10px;
-  right: 10px;
-  width: 40px;
-  height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-
-.butao-lateral .bg_links {
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 100%;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  position: absolute;
-}
-
-.butao-lateral .logo {
-  width: 40px;
-  height: 40px;
-  z-index: 9;
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: 10px 7px;
-  opacity: 0.9;
-  -webkit-transition: all 1s 0.2s ease;
-  transition: all 1s 0.2s ease;
-  bottom: 0;
-  right: 0;
-}
-
-.butao-lateral .social {
-  opacity: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.butao-lateral .social .icon {
-  width: 100%;
-  height: 100%;
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transition: all 0.2s ease, background-color 0.4s ease;
-  transition: all 0.2s ease, background-color 0.4s ease;
-  opacity: 0;
-  border-radius: 100%;
-}
-
-.butao-lateral .social.portfolio {
-  -webkit-transition: all 0.8s ease;
-  transition: all 0.8s ease;
-}
-
-.butao-lateral .social.portfolio .icon {
-  background-image: url(https://rafaelalucas91.github.io/assets/codepen/link.svg);
-}
-
-.butao-lateral .social.dribbble {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.butao-lateral .social.dribbble .icon {
-  background-image: url(https://rafaelalucas91.github.io/assets/codepen/dribbble.svg);
-}
-
-.butao-lateral .social.linkedin {
-  -webkit-transition: all 0.8s ease;
-  transition: all 0.8s ease;
-}
-
-.butao-lateral .social.linkedin .icon {
-  background-image: url(https://rafaelalucas91.github.io/assets/codepen/linkedin.svg);
-}
-
-.butao-lateral:hover {
-  width: 105px;
-  height: 105px;
-  -webkit-transition: all 0.6s cubic-bezier(0.64, 0.01, 0.07, 1.65);
-  transition: all 0.6s cubic-bezier(0.64, 0.01, 0.07, 1.65);
-}
-
-.butao-lateral:hover .logo {
-  opacity: 1;
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
-}
-
-.butao-lateral:hover .social {
-  opacity: 1;
-}
-
-.butao-lateral:hover .social .icon {
-  opacity: 0.9;
-}
-
-.butao-lateral:hover .social:hover {
-  background-size: 28px;
-}
-
-.butao-lateral:hover .social:hover .icon {
-  background-size: 65%;
-  opacity: 1;
-}
-
-.butao-lateral:hover .social.portfolio {
-  right: 0;
-  bottom: calc(100% - 40px);
-  -webkit-transition: all 0.3s 0s cubic-bezier(0.64, 0.01, 0.07, 1.65);
-  transition: all 0.3s 0s cubic-bezier(0.64, 0.01, 0.07, 1.65);
-}
-
-.butao-lateral:hover .social.portfolio .icon:hover {
-  background-color: #698fb7;
-}
-
-.butao-lateral:hover .social.dribbble {
-  bottom: 45%;
-  right: 45%;
-  -webkit-transition: all 0.3s 0.15s cubic-bezier(0.64, 0.01, 0.07, 1.65);
-  transition: all 0.3s 0.15s cubic-bezier(0.64, 0.01, 0.07, 1.65);
-}
-
-.butao-lateral:hover .social.dribbble .icon:hover {
-  background-color: #ea4c89;
-}
-
-.butao-lateral:hover .social.linkedin {
-  bottom: 0;
-  right: calc(100% - 40px);
-  -webkit-transition: all 0.3s 0.25s cubic-bezier(0.64, 0.01, 0.07, 1.65);
-  transition: all 0.3s 0.25s cubic-bezier(0.64, 0.01, 0.07, 1.65);
-}
-
-.butao-lateral:hover .social.linkedin .icon:hover {
-  background-color: #0077b5;
+  .conatiner-button-projeto {
+    position: relative;
+    padding: 1em 1.5em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    margin: 1em 0.8em;
+  }
+  .conatiner-button-projeto.type1 {
+    color: #fff;
+  }
+  .conatiner-button-projeto.type1.type1::after, .conatiner-button-projeto.type1.type1::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    border: 2px solid;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+    border-radius: 2px;
+  }
+  .conatiner-button-projeto.type1.type1::after {
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+  }
+  .conatiner-button-projeto.type1.type1::before {
+    top: 0;
+    left: 0;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #fff;
+    border-left-color: #fff;
+  }
+  .conatiner-button-projeto.type1.type1:hover:after, .conatiner-button-projeto.type1.type1:hover:before {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 #conhecimento {
@@ -1409,14 +1312,23 @@ h1 {
   background: #415a80;
   height: 100px;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
   position: relative;
   width: 960px;
 }
 
 .slider::before, .slider::after {
-  background: -webkit-gradient(linear, left top, right top, from(#415a80), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(to right, #415a80 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#415a80), to(rgba(168, 78, 78, 0)));
+  background: linear-gradient(to right, #415a80 0%, rgba(168, 78, 78, 0) 100%);
   content: "";
   height: 100px;
   position: absolute;

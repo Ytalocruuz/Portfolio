@@ -3,16 +3,19 @@
 	display: flex;
 	height: 50vh;
 	justify-content: center;
+	
 
     img{
         width: 60px;
     }
 }
 
-$color-1:#415a80;
+$color-1conhecimento:#415a80;
+
 
 @mixin white-gradient {
-	background: linear-gradient(to right,  $color-1 0%,rgba(255,255,255,0) 100%);
+	background: linear-gradient(to right, $color-1conhecimento 0%,rgba(168, 78, 78, 0) 100%);
+	
 }
 
 $animationSpeed: 20s;
@@ -26,9 +29,12 @@ $animationSpeed: 20s;
 
 // Styling
 .slider {
-	background: $color-1;
+	background: $color-1conhecimento;
 	height: 100px;
 	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	overflow:hidden;
 	position: relative;
 	width: 960px;
